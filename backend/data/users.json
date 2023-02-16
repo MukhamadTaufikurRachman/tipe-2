@@ -1,0 +1,5 @@
+[
+  {"username":"user1","email":"user1@gmail.com","password":"admin123","phoneNumber":"085987653425","address":"Jakarta"},
+  {"username":"user2","email":"user2@gmail.com","password":"admin456","phoneNumber":"088987765342","address":"Bandung"},
+  {"username":"user3","email":"user3@gmail.com","password":"admin789","phoneNumber":"085876528191","address":"Surabaya"}
+]
