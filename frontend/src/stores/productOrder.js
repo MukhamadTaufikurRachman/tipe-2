@@ -8,6 +8,7 @@ export const useProductOrderStore = defineStore("productOrder", {
     return {
       access_token: localStorage.getItem("access_token"),
       username: localStorage.getItem("username"),
+      orderList: [],
     };
   },
 
@@ -35,6 +36,19 @@ export const useProductOrderStore = defineStore("productOrder", {
       }
     },
 
+    async fetchOrderList() {
+      try {
+        const { data } = await axios.get(`${baseURL}/product-order/list`, {
+          headers: {
+            access_token: localStorage.getItem("access_token"),
+          },
+        });
+        this.orderList = data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
     async doLogin(val) {
       try {
         const { data } = await axios.post(`${baseURL}/login`, val);
@@ -49,7 +63,7 @@ export const useProductOrderStore = defineStore("productOrder", {
           timer: 1500,
         });
 
-        this.$router.push("/product-Order");
+        this.$router.push("/product-order");
       } catch (err) {
         // console.log(err);
         Swal.fire({
