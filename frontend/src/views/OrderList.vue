@@ -4,21 +4,21 @@
   import { useProductOrderStore } from '../stores/productOrder';
 
   export default {
-    name: "productOrder",
+    name: "orderList",
 
     components: {
       NavBar
     },
   }
 
-</script>
+  </script>
 
-<template>
-  <NavBar />
-  <div class="container mb-4">
-    <div style="margin-top: 4.5em">
-      <h3 class="text-center">Order Product Here</h3>
-    </div>
-    <hr>
+  <template>
+    <NavBar />
+    <div class="container mb-4">
+      <div style="margin-top: 4.5em">
+        <h3 class="text-center">Your Order List</h3>
+      </div>
+      <hr>
   </div>
 </template>

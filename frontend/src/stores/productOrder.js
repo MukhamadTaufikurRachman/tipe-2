@@ -7,6 +7,7 @@ export const useProductOrderStore = defineStore("productOrder", {
   state: () => {
     return {
       access_token: localStorage.getItem("access_token"),
+      username: localStorage.getItem("username"),
     };
   },
 
@@ -38,6 +39,7 @@ export const useProductOrderStore = defineStore("productOrder", {
       try {
         const { data } = await axios.post(`${baseURL}/login`, val);
         localStorage.setItem("access_token", data.access_token);
+        localStorage.setItem("username", data.username);
 
         Swal.fire({
           position: "center",
@@ -56,6 +58,25 @@ export const useProductOrderStore = defineStore("productOrder", {
           text: err.response.data.message,
         });
       }
+    },
+
+    doLogout() {
+      Swal.fire({
+        title: "Are you sure?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Log out!", "Success Logout.", "success");
+
+          localStorage.clear();
+          this.$router.push("/login");
+          // this.isLogin = false;
+        }
+      });
     },
   },
 });
