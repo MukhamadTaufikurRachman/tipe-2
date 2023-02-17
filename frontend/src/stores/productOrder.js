@@ -36,6 +36,33 @@ export const useProductOrderStore = defineStore("productOrder", {
       }
     },
 
+    async addOrder(val) {
+      try {
+        const { data } = await axios.post(`${baseURL}/product-order/add`, val, {
+          headers: {
+            access_token: localStorage.getItem("access_token"),
+          },
+        });
+
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "success add new order data",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        this.$router.push("/order-list");
+      } catch (err) {
+        // console.log(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err.response.data.message,
+        });
+      }
+    },
+
     async fetchOrderList() {
       try {
         const { data } = await axios.get(`${baseURL}/product-order/list`, {

@@ -3,6 +3,7 @@
   import CardOrder from '../components/CardOrder.vue';
   import { mapActions, mapState } from 'pinia';
   import { useProductOrderStore } from '../stores/productOrder';
+  import { RouterLink } from 'vue-router'
 
   export default {
     name: "orderList",
@@ -33,6 +34,11 @@
       </div>
       <hr>
         <h4 v-if="orderList.length === 0" class="card-title" style="text-align: center;">Sorry, your order is empty <i class="bi bi-emoji-frown"></i></h4>
+        <div v-if="orderList.length === 0" class="text-center" style="margin-top: 1rem;">
+          <RouterLink to="/product-order" style="color:black; text-decoration: none;">
+            <button type="button" class="btn btn-secondary">Start Order</button>
+          </RouterLink>
+        </div>
         <div class="row mb-4">
           <CardOrder 
             v-for="order in orderList"
