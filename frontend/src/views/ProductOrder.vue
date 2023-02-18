@@ -40,7 +40,7 @@
         <div class="col-6 mx-auto">
           <div class="card shadow p-3 mb-5 bg-white rounded" style="margin-top: 0.7rem">
             <div class="card-body">
-              <h5 class="card-title d-flex justify-content-center"><i class="bi bi-journal-text"></i>&nbsp;Order Product Form
+              <h5 class="card-title d-flex justify-content-center"><i class="bi bi-boxes"></i>&nbsp;Order Product Form
               </h5>
               <hr>
               <form @submit.prevent="addOrderHandle" class="px-4 py-3">
