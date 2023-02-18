@@ -55,7 +55,7 @@
                   <div class="form-group">
                     <label>Password</label>
                     <input v-model="userRegister.password" type="password" class="form-control"
-                      placeholder="type password">
+                      placeholder="type password (minimum 5 characters)">
                   </div><br>
                   <div class="form-group">
                     <label>Phone Number</label>
@@ -64,7 +64,7 @@
                   </div><br>
                   <div class="form-group">
                       <label>Address</label>
-                      <textarea v-model="userRegister.address" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <textarea v-model="userRegister.address" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="type address"></textarea>
                     </div><br>
                   <div class="d-flex justify-content-center">
                     <p>
@@ -90,7 +90,11 @@
 
 <style>
   .full-cover {
+    display: block;
+    max-width:1920px;
+    max-height:1080px;
+    width: auto;
     height: auto;
-    background-image: url("../assets/image_s.jpg");
+    background-image: url("../assets/bcg.jpg");
   }
 </style>

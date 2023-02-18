@@ -50,11 +50,11 @@
                 </div><br>
                 <div class="form-group">
                   <label>Quantity</label>
-                  <input v-model="createOrder.quantity" type="number" class="form-control" placeholder="type product quantity">
+                  <input v-model="createOrder.quantity" type="number" class="form-control" placeholder="type product quantity (minimum quantity is 1)">
                 </div><br>
                 <div class="form-group">
                   <label>Price</label>
-                  <input v-model="createOrder.price" type="number" class="form-control" placeholder="type product price">
+                  <input v-model="createOrder.price" type="number" class="form-control" placeholder="type product price (minimum price is Rp. 100.000)">
                   </div><br>
                 <div class="d-flex justify-content-center">
                   <button type="submit" class="btn btn-secondary">Submit</button>

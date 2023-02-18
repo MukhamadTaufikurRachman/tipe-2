@@ -30,7 +30,7 @@
 
 <template>
   <section id="login">
-    <div class="full-cover">
+    <div class="full-cover-login">
 
       <div class="container">
         <div class="row">
@@ -72,8 +72,8 @@
 </template>
 
 <style>
-  .full-cover {
-    height: 120vh;
-    background-image: url("../assets/image_s.jpg");
+  .full-cover-login {
+    height: 100vh;
+    background-image: url("../assets/bcg.jpg");
   }
 </style>

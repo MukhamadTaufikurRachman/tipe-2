@@ -38,6 +38,10 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: {
             msg: "Quantity Product is required!",
           },
+          min: {
+            args: 1,
+            msg: "Minimum product quantity is 1",
+          },
         },
       },
       price: {
